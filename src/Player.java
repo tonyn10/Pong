@@ -16,11 +16,11 @@ public class Player {
 
     public void start() {
         x = 0;
-        y = Constants.SCREEN_HEIGHT/2 - Constants.PADDLE_HEIGHT/2;
+        y = Game.SCREEN_HEIGHT/2 - Game.PADDLE_HEIGHT/2;
 
         // player paddle starting position
         gc.setFill(Color.WHITE);
-        gc.fillRect(x, y, Constants.PADDLE_WIDTH, Constants.PADDLE_HEIGHT);
+        gc.fillRect(x, y, Game.PADDLE_WIDTH, Game.PADDLE_HEIGHT);
 
         // TODO: fix teleportation of paddle when restarting set
         gc.getCanvas().setOnMouseMoved(e -> y = (int)e.getY());
@@ -28,7 +28,7 @@ public class Player {
 
     public void updatePlayer() {
         gc.setFill(Color.WHITE);
-        gc.fillRect(x, y, Constants.PADDLE_WIDTH, Constants.PADDLE_HEIGHT);
+        gc.fillRect(x, y, Game.PADDLE_WIDTH, Game.PADDLE_HEIGHT);
     }
 
     public double getY() {

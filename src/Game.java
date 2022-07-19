@@ -12,6 +12,15 @@ public class Game {
 
     private boolean gameEnded;
 
+    public static final int SCREEN_WIDTH = 1200;
+    public static final int SCREEN_HEIGHT = 800;
+
+    public static final int PADDLE_WIDTH = 13;
+    public static final int PADDLE_HEIGHT = 80;
+
+    public static boolean gameStarted = false;
+
+
     public Game(GraphicsContext gc) {
         this.gc = gc;
 
@@ -29,7 +38,7 @@ public class Game {
 
             // new black screen
             gc.setFill(Color.BLACK);
-            gc.fillRect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
+            gc.fillRect(0, 0, Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT);
 
             // restart positions
             if(tracker.getState() == 0) {
@@ -56,7 +65,7 @@ public class Game {
                     player.start();
                     computer.start(ball.getYSpeed());
 
-                    Constants.gameStarted = false;  // resets and waits for click to start again
+                    Game.gameStarted = false;  // resets and waits for click to start again
                 }
             }
 

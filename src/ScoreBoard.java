@@ -1,4 +1,9 @@
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
+
 
 public class ScoreBoard {
 
@@ -35,8 +40,11 @@ public class ScoreBoard {
         ++computerScore;
     }
 
-    // TODO: display scores on screen, should be in the background
     public void displayScores() {
+        gc.setTextAlign(TextAlignment.CENTER);
+        gc.setFont(Font.font("Helvetica", FontWeight.BOLD, 40));
+        gc.setFill(Color.WHITE);
+        gc.fillText(playerScore + "\t\t\t\t\t" + computerScore, Game.SCREEN_WIDTH/2, Game.SCREEN_HEIGHT/4);   // string and x and y position
         System.out.println(playerScore + " : " + computerScore);
     }
 }
