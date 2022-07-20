@@ -10,12 +10,14 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
+
 
 public class Main extends Application {
 
     public static Timeline timeline;
 
-    private final String logoFile = "";
+    private final String logoFile = "BallImage.png";
 
     public static void main(String[] args) {
         launch(args);
@@ -36,8 +38,8 @@ public class Main extends Application {
         stage.setTitle("Pong");
         stage.setScene(new Scene(new StackPane(canvas), Color.BLACK));
 
-//        Image icon = new Image(logoFile);
-//        stage.getIcons().add(icon);
+        Image icon = new Image(logoFile);
+        stage.getIcons().add(icon);
 
         stage.show();
 
