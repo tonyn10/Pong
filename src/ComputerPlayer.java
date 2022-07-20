@@ -1,6 +1,7 @@
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+
 public class ComputerPlayer {
 
     private GraphicsContext gc;
@@ -21,12 +22,12 @@ public class ComputerPlayer {
         ySpeed = 0.9*ballSpeed; // 80% of the ballSpeed
         // TODO: find a way to make computer more fair
 
-        x = Constants.SCREEN_WIDTH-Constants.PADDLE_WIDTH;
-        y = Constants.SCREEN_HEIGHT/2-Constants.PADDLE_HEIGHT/2;
+        x = Game.SCREEN_WIDTH-Game.PADDLE_WIDTH;
+        y = Game.SCREEN_HEIGHT/2-Game.PADDLE_HEIGHT/2;
 
         // starting position of computer paddle
         gc.setFill(Color.WHITE);
-        gc.fillRect(x, y, Constants.PADDLE_WIDTH, Constants.PADDLE_HEIGHT);
+        gc.fillRect(x, y, Game.PADDLE_WIDTH, Game.PADDLE_HEIGHT);
     }
 
     public void updateComputer() {
@@ -35,7 +36,7 @@ public class ComputerPlayer {
 
         gc.setFill(Color.WHITE);
         gc.fillRect(x, y,
-                Constants.PADDLE_WIDTH, Constants.PADDLE_HEIGHT);
+                Game.PADDLE_WIDTH, Game.PADDLE_HEIGHT);
     }
 
     public double getY() {
